@@ -41,7 +41,7 @@
             <br>
             <select name="type_id" id="type_id">
                 @foreach($types as $type)
-                <option value="$type -> id">
+                <option value="{{$type->id}}">
                     {{$type -> name}}
                 </option>
                 @endforeach
