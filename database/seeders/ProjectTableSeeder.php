@@ -6,6 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 use App\Models\Project;
+use App\Models\Type;
 
 class ProjectTableSeeder extends Seeder
 {
@@ -16,7 +17,12 @@ class ProjectTableSeeder extends Seeder
      */
     public function run()
     {
-        Project :: factory() -> count(20)->create();
+        $projects = Project :: factory() -> count(40)->make();
+        foreach ($projects as $project) {
+            $type = Type :: inRandomOrder() -> first();
+            $project -> type_id = $type -> id;
+            $project->save();
+        }
     }
 
 }

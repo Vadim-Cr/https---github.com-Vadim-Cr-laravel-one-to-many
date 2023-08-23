@@ -7,8 +7,10 @@ use App\Models\Project;
 class GuestController extends Controller
 {
     public function index() {
-        $projects = Project :: all();
-        return view ('home', compact('projects'));
-    } 
+        $projects = Project::with('type')->get(); // Carica la relazione con il tipo
+        dd($projects);
+        return view('home', compact('projects'));
+    }
+    
 
 }

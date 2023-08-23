@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Type;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -22,7 +23,8 @@ class ProjectFactory extends Factory
             "color" => fake() -> randomElement(['white', 'orange', 'pink', 'magenta']),
             "start_date" => fake() -> date(),
             "end_date" => fake() -> date(),
-            "difficulty" => fake() -> randomElement(['facile', 'medio', 'difficile'])
+            "difficulty" => fake() -> randomElement(['facile', 'medio', 'difficile']),
+            "type_id" => Type::all()->random()->id
         ];
     }
 }

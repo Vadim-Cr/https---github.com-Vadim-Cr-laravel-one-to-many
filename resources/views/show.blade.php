@@ -16,9 +16,12 @@
     </span>
     <span class="col bg-dark text-light rounded m-3 p-2">
        End date: {{$projects -> end_date}}
-    </span>
+   </span>
     <span class="col bg-dark text-light rounded m-3 p-2">
        Difficulty: {{$projects -> difficulty}}
+    </span>
+    <span class="col bg-dark text-light rounded m-3 p-2">
+       Type: {{$projects -> type -> name}}
     </span>
    </div>
 
